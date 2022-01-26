@@ -8,7 +8,6 @@ const dom = new JSDOM()
 global.document = dom.window.document
 global.window = dom.window
 
-
 test('input should be valid HTMLElement', () => {
     expect(() => {
         getPath(null);
@@ -69,6 +68,28 @@ test('getPath should return selector for element with not unique class/tag + par
     const result = getPath(h);
     expect(document.querySelectorAll(result)).toMatchObject(h);
 });
+
+test('getPath should return selector for element with multiple classes', () => {
+    const h = document.querySelectorAll('.tab.active')[0]
+    const result = getPath(h);
+    expect(document.querySelectorAll(result)).toMatchObject(h);
+});
+
+
+test('Check All DOM', () => {
+    domIterator(document.documentElement);
+});
+
+function domIterator(node) { 
+    const result = getPath(node);
+    expect(document.querySelectorAll(result)).toMatchObject(node);
+    if (node.children.length > 0) { 
+        for (let index = 0; index < node.children.length; index++) {
+            const element = node.children[index];
+            domIterator(element)
+        }
+    }
+}
 
 function toElement(s = '', c, t = document.createElement('template'), l = 'length') {
     t.innerHTML = s.trim(); c = [...t.content.childNodes]; return c[l] > 1 ? c : c[0] || '';
