@@ -7,6 +7,10 @@ const fs = require("fs")
 const fsPromises = fs.promises
 const pathSeparator = "/"
 
+const pathPrintCommand = (folderName)=>{ 
+    path(folderName).then(r => console.log(r))
+}
+
 const path = async (folderName) => {
   if (fs.existsSync(folderName)) {
     return fsPromises
@@ -60,4 +64,5 @@ const childPath = (foldernames) => {
   return Promise.all(promises)
 }
 
-module.exports = path
+module.exports.path = path
+module.exports.pathCommand = pathPrintCommand

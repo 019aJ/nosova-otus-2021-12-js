@@ -1,4 +1,4 @@
-const path = require("./tree");
+const path = require("./tree").path;
 
 test("if path is available should return array", () => {
   //const result = path('C:/OtusJS/nosova-otus-2021-12-js/javascript-lesson-7/node_modules')

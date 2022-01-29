@@ -4,7 +4,8 @@
   "description": "",
   "main": "tree.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "tree": "run-func tree.js pathCommand"
   },
   "author": "",
   "license": "ISC",
