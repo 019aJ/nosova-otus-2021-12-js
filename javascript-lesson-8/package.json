@@ -1,0 +1,17 @@
+{
+  "name": "javascript-lesson-8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sort.js",
+  "scripts": {
+    "test": "jest",
+    "sort": "run-func sort.js sort"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "jest": "^27.4.7",
+    "run-func": "^2.0.0"
+  }
+}
