@@ -1,0 +1,17 @@
+{
+  "name": "javascript-lesson-7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tree.js",
+  "scripts": {
+    "test": "jest",
+    "tree": "run-func tree.js pathCommand"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "jest": "^27.4.7",
+    "path": "^0.12.7"
+  }
+}
